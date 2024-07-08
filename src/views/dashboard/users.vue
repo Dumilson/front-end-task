@@ -34,7 +34,6 @@
                   <i class="pi pi-search" />
                 </InputIcon>
                 <InputText
-                  size="small"
                   v-model="filters['global'].value"
                   placeholder="pesquisar"
                 />

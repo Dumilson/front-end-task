@@ -8,14 +8,13 @@
             <label for="email">Email</label>
             <InputText
               id="email"
-              size="small"
               type="email"
               v-model="data.email"
             />
           </div>
           <div class="flex flex-col gap-2">
             <label for="password">Senha</label>
-            <div class="w-full text-sm">
+            <div class="w-full">
               <Password
                 id="password"
                 class="w-full *:w-full"

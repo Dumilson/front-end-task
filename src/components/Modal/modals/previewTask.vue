@@ -9,7 +9,6 @@
         <label for="title">Título</label>
         <InputText
           id="title"
-          size="small"
           v-model="data.title"
           aria-describedby="title-help"
           disabled
@@ -40,7 +39,7 @@
           optionValue="id"
           filter
           placeholder="Escolha usuários"
-          class="w-full text-sm"
+          class="w-full"
           disabled
         />
 
@@ -56,10 +55,8 @@
           id="deadline"
           showIcon
           fluid
-          size="small"
           iconDisplay="input"
           inputId="icondisplay"
-          class="text-sm"
           disabled
         />
 
