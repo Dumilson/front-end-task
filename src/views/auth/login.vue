@@ -11,7 +11,6 @@
               size="small"
               type="email"
               v-model="data.email"
-              placeholder="Email"
             />
           </div>
           <div class="flex flex-col gap-2">
@@ -23,7 +22,6 @@
                 :feedback="false"
                 toggleMask
                 v-model="data.password"
-                placeholder="Senha"
               />
             </div>
           </div>
