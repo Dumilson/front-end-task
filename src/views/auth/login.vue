@@ -1,6 +1,6 @@
 <template>
   <AuthLayout>
-    <div class="flex flex-col justify-center gap-2 bg-white">
+    <div class="flex flex-col justify-center gap-2 bg-white" @keyup.enter="onLogin()">
       <Message v-if="loginError" severity="error">{{ loginError }}</Message>
       <div class="w-full max-w-xs p-4 border border-solid rounded-lg">
         <div class="flex flex-col w-full h-full gap-2">

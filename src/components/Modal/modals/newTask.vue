@@ -47,7 +47,7 @@
       </div>
 
       <div class="flex flex-col">
-        <label for="assign">Encarregar</label>
+        <label for="assign">Responsável</label>
         <MultiSelect
           v-model="data.users_id"
           :options="availableUsers"
@@ -151,10 +151,10 @@ const newTaskError = ref("");
 const availableUsers = ref([]);
 
 const dataSchema = z.object({
-  title: z.string().min(3, { message: "Título inválido" }),
-  description: z.string().min(3, { message: "Descrição inválida inválido" }),
+  title: z.string().min(1, { message: "Título é obrigatório" }),
+  description: z.string().min(1, { message: "Descrição obrigatório" }),
   deadline: z.date().min(new Date(), {
-    message: "Data inválida",
+    message: "O campo Data final deve ser uma data posterior a hoje",
   }),
   users_id: z
     .number()

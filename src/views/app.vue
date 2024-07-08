@@ -27,7 +27,7 @@
             </div>
             <div
               v-else
-              class="px-2 py-6 mt-2 text-center border border-solid rounded-lg shadow-sm cursor-pointer select-none opacity-35"
+              class="px-2 py-6 mt-2 text-center border border-solid rounded-lg shadow-sm cursor-pointer select-none opacity-35  "
             >
               <div
                 v-if="isFetching"
@@ -89,13 +89,15 @@
 import { ref, onBeforeMount } from "vue";
 import { Card, Header } from "@/components";
 import services from "@/services";
+import { useAuthStore } from "@/stores";
 
 const pendingTasks = ref<any[]>([]);
 const doneTasks = ref<any[]>([]);
 const isFetching = ref(false);
+const id = useAuthStore().user.id;
 
 async function fetchMyTasks() {
-  const response = await services.user.getMyAllTasks();
+  const response = await services.user.getMyAllTasks(id);
   if (response.data) {
     pendingTasks.value = [];
     doneTasks.value = [];
