@@ -1,6 +1,6 @@
 #  Projecto To Do List
 
-## Requisitos para Rodar o Projeto
+## Pré-requisitos
 
 Antes de começar, certifique-se de que você tem as seguintes ferramentas instaladas em sua máquina:
 
