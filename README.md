@@ -71,3 +71,11 @@ npm run dev
 yarn dev
 ```
 
+
+### 6. Ambiente de Produção 
+
+Poderá acessar a aplicação online pelo seguinte link: <a href="https://front-end-task-roan.vercel.app/">https://front-end-task-roan.vercel.app/</a> e para acessar o painel deverá inserir as informações abaixo:
+
+- **Admin User**
+  - Email: admin@admin.com
+  - Senha: 123456

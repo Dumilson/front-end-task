@@ -1,6 +1,6 @@
 <template>
   <AuthLayout>
-    <div class="flex flex-col justify-center gap-2">
+    <div class="flex flex-col justify-center gap-2 bg-white">
       <Message v-if="loginError" severity="error">{{ loginError }}</Message>
       <div class="w-full max-w-xs p-4 border border-solid rounded-lg">
         <div class="flex flex-col w-full h-full gap-2">
@@ -11,10 +11,11 @@
               size="small"
               type="email"
               v-model="data.email"
+              placeholder="Email"
             />
           </div>
           <div class="flex flex-col gap-2">
-            <label for="password">Password</label>
+            <label for="password">Senha</label>
             <div class="w-full text-sm">
               <Password
                 id="password"
@@ -22,6 +23,7 @@
                 :feedback="false"
                 toggleMask
                 v-model="data.password"
+                placeholder="Senha"
               />
             </div>
           </div>
@@ -53,8 +55,8 @@ import AuthLayout from "@/layouts/auth.vue";
 const loading = ref(false);
 const authStore = useAuthStore();
 const data = reactive({
-  email: "admin@admin.com",
-  password: "123456",
+  email: "",
+  password: "",
 });
 const loginError = ref<string>("");
 
