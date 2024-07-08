@@ -9,7 +9,6 @@
         <label for="title">Título</label>
         <InputText
           id="title"
-          size="small"
           v-model="data.title"
           aria-describedby="title-help"
           :invalid="dataErrors?.title?._errors[0]"
@@ -55,7 +54,7 @@
           optionValue="id"
           filter
           placeholder="Escolha usuários"
-          class="w-full text-sm"
+          class="w-full"
         />
         <small
           v-if="dataErrors?.users_id?._errors[0]"
@@ -77,10 +76,8 @@
           id="deadline"
           showIcon
           fluid
-          size="small"
           iconDisplay="input"
           inputId="icondisplay"
-          class="text-sm"
           :invalid="dataErrors?.deadline?._errors[0]"
         />
         <small

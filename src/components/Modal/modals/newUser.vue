@@ -10,7 +10,6 @@
         <label for="title">Nome</label>
         <InputText
           id="name"
-          size="small"
           v-model="data.name"
           :invalid="dataErrors?.name?._errors[0]"
         />
@@ -23,7 +22,6 @@
         <label for="description">Email</label>
         <InputText
           v-model="data.email"
-          size="small"
           id="email"
           type="email"
           :invalid="dataErrors?.email?._errors[0]"
@@ -34,9 +32,9 @@
       </div>
       <div class="flex flex-col gap-2">
         <label for="password">Password</label>
-        <div class="w-full text-sm">
+        <div class="w-full">
           <Password
-            size="small"
+
             id="password"
             class="w-full *:w-full"
             :feedback="false"
@@ -55,7 +53,7 @@
           <label for="isAdmin">Criar como admin</label>
         </div>
         <small id="isAdmin-help"
-          >Selecione para criar o usuário com admin</small
+          >Selecione para criar usuário admin</small
         >
       </div>
       <div class="flex justify-end gap-2 mt-2">
@@ -108,7 +106,7 @@ const dataSchema = z.object({
     .email({ message: "formato de email inválido" }),
   password: z
     .string()
-    .min(8, { message: "senha deve conter pelo menos 8 caracteres" }),
+    .min(8, { message: "Senha deve conter pelo menos 8 caracteres" }),
 });
 
 type dataSchemaTypes = z.infer<typeof dataSchema>;
