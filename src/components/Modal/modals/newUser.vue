@@ -8,43 +8,27 @@
 
       <div class="flex flex-col">
         <label for="title">Nome</label>
-        <InputText
-          id="name"
-          v-model="data.name"
-          :invalid="dataErrors?.name?._errors[0]"
-        />
+        <InputText id="name" v-model="data.name" :invalid="dataErrors?.name?._errors[0]" />
         <small id="name-help" class="text-red-500">{{
-          dataErrors?.name?._errors[0]
-        }}</small>
+        dataErrors?.name?._errors[0]
+      }}</small>
       </div>
 
       <div class="flex flex-col">
         <label for="description">Email</label>
-        <InputText
-          v-model="data.email"
-          id="email"
-          type="email"
-          :invalid="dataErrors?.email?._errors[0]"
-        />
+        <InputText v-model="data.email" id="email" type="email" :invalid="dataErrors?.email?._errors[0]" />
         <small id="email-help" class="text-red-500">{{
-          dataErrors?.email?._errors[0]
-        }}</small>
+        dataErrors?.email?._errors[0]
+      }}</small>
       </div>
       <div class="flex flex-col gap-2">
         <label for="password">Password</label>
         <div class="w-full">
-          <Password
-
-            id="password"
-            class="w-full *:w-full"
-            :feedback="false"
-            toggleMask
-            v-model="data.password"
-            :invalid="dataErrors?.password?._errors[0]"
-          />
+          <Password id="password" class="w-full *:w-full" :feedback="false" toggleMask v-model="data.password"
+            :invalid="dataErrors?.password?._errors[0]" />
           <small id="password-help" class="text-red-500">{{
-            dataErrors?.password?._errors[0]
-          }}</small>
+        dataErrors?.password?._errors[0]
+      }}</small>
         </div>
       </div>
       <div class="flex flex-col">
@@ -52,33 +36,16 @@
           <Checkbox v-model="data.isAdmin" id="isAdmin" :binary="true" />
           <label for="isAdmin">Criar como admin</label>
         </div>
-        <small id="isAdmin-help"
-          >Selecione para criar usuário admin</small
-        >
+        <small id="isAdmin-help">Selecione para criar usuário admin</small>
       </div>
       <div class="flex justify-end gap-2 mt-2">
-        <Button
-          type="button"
-          label="Cancelar"
-          severity="secondary"
-          @click="modalRef?.closeModal()"
-        ></Button>
-        <Button
-          type="button"
-          label="Criar"
-          :loading="loading"
-          @click="onCreateUser()"
-        ></Button>
+        <Button type="button" label="Cancelar" severity="secondary" @click="modalRef?.closeModal()"></Button>
+        <Button type="button" label="Criar" :loading="loading" @click="onCreateUser()"></Button>
       </div>
     </div>
   </Modal>
 
-  <Button
-    @click="modalRef?.openModal()"
-    label="Criar usuário"
-    severity="info"
-    size="small"
-  />
+  <Button @click="modalRef?.openModal()" label="Criar usuário" severity="info" size="small" />
 </template>
 
 <script setup lang="ts">
@@ -137,6 +104,10 @@ async function onCreateUser() {
         life: 3000,
       });
       modalRef.value?.closeModal();
+      data.name = ""
+      data.email = ""
+      data.password = ""
+      data.isAdmin = false
     } else {
       newUserError.value = response.error.message;
       toast.add({

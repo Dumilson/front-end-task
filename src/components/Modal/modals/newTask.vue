@@ -117,7 +117,7 @@
 <script setup lang="ts">
 import { onBeforeMount, reactive, ref, watch } from "vue";
 import { format, parseISO } from "date-fns";
-import { z } from "zod";
+import { date, z } from "zod";
 import { Modal } from "@/components";
 
 import Textarea from "primevue/textarea";
@@ -181,6 +181,10 @@ async function onCreateTask() {
         life: 3000,
       });
       modalRef.value?.closeModal();
+      data.title = ""
+      data.description = ""
+      data.deadline = new Date(new Date().setDate(new Date().getDate() + 1))
+      data.users_id = []
     } else {
       newTaskError.value = response.error.message;
       toast.add({
