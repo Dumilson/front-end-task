@@ -95,7 +95,7 @@ const filters = ref({
 async function fetchUsers() {
   const response = await services.user.getAllPaginated();
   if (response.data.status) {
-    users.value = response.data.data.data;
+    users.value = response.data.data;
   } else {
     console.log(response.error);
   }
